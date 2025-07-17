@@ -1,0 +1,119 @@
+<div class="container text-center mt-5">
+  <h1>Deliver</h1>
+
+  <div class="content-row">
+    <!-- Left: Table section -->
+    <div class="left-panel">
+      <!-- Dropdown menu -->
+      <div class="building-selection">
+        <select id="building-select" class="building-dropdown" multiple>
+          <option value="ALL">All Buildings</option>
+          <option value="A">A - Building</option>
+          <option value="B">B - Building</option>
+          <option value="C">C - Building</option>
+          <option value="E">E - Building</option>
+          <option value="I">I - Building</option>
+          <option value="KÅRALLEN">Kårallen</option>
+          <option value="SH">SH</option>
+          <option value="KEY">Key</option>
+          <option value="PHYSICS">Physics - Building</option>
+        </select>
+      </div>
+
+      <!-- Orders Table (to the left) -->
+      <div class="table-wrapper">
+        <div class="table-scroll">
+          <div id="loading-spinner" class="hidden">
+            <i class="fa fa-spinner fa-spin fa-3x" style="font-size: 24px; color: #b91474;"></i>
+          </div>
+
+          <table class="order-table">
+            <thead>
+              <tr>
+                <th>ORDER</th>
+                <th>TIME</th>
+                <th>BUILDING</th>
+                <th>ROOM</th>
+                <th>RATING</th>
+                <th>
+                  REWARD
+                  <span class="custom-tooltip-wrapper tooltip-left">
+                    <i
+                      class="fas fa-question-circle"
+                      style="cursor: pointer; color: #b91474"
+                    ></i>
+                    <div class="custom-tooltip">
+                      This shows how many coffee cups you earn for delivering.
+                      </br>
+                      A tip: Hold the mouse over the coffee cups to see your
+                      reward in SEK!
+                    </div>
+                  </span>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="order-content"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <button id="about-order-button" class="button-white hidden">
+        About this order
+      </button>
+      <button id="confirm-button" class="button-white hidden">
+        Confirm Order
+      </button>
+    </div>
+
+    <!-- Right: Map section -->
+    <!-- iframe = elemt that embed another webpage or document within this html page,
+      like putting a window on this page that shows content from another source -->
+    <div class="right-panel">
+      <iframe
+        id="map"
+        src="https://use.mazemap.com/#v=1&campusid=742&zlevel=2&center=15.577423,58.399568&zoom=14.5"
+        class="map-box"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="login-required-modal" class="modal hidden">
+    <div class="modal-content">
+      <p>You need to login to pick up an order</p>
+      <button id="modal-login">Login</button>
+      <button id="modal-close">Close</button>
+    </div>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div id="confirm-modal" class="modal hidden">
+    <div class="modal-content">
+      <p>Are you sure you want to confirm this order?</p>
+      <button id="modal-yes">Yes</button>
+      <button id="modal-no">No</button>
+    </div>
+  </div>
+
+  <!-- About Order Modal -->
+  <div id="about-order-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Order Details</h3>
+      <p id="about-order-text">Information about order:</p>
+      <button id="modal-close-info">Close</button>
+    </div>
+  </div>
+
+  <!-- Something went wrong Modal -->
+  <div id="went-wrong-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Something went wrong!</h3>
+      <p id="about-order-text">The order was accepted by someone else or was expired!</p>
+      <button id="modal-close-wrong-info">Close</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="scripts/deliver.js"></script>
+</div>

@@ -1,0 +1,226 @@
+/* Container */
+.myDeliveries-info {
+  background-color: #ffffff;
+  padding: 20px 40px 40px 40px;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Order selector */
+.order-selector {
+  margin: 20px auto;
+  max-width: 500px;
+}
+.order-label { display: block; font-size: 18px; font-weight: bold; margin-bottom: 5px; color: #333; }
+.order-select {
+  width: 100%; padding: 10px;
+  border: 2px solid #5c5cc6;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #ea1a94;
+  background: #ffffff;
+  appearance: none;
+}
+
+.order-select:focus {
+  outline: none;
+  border-color: #ea1a94;
+}
+
+/* Buttons container: history left, rate right */
+.history-rate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Tables & borderless */
+.product-info-table,
+.customer-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+.product-info-table td,
+.customer-info-table td {
+  padding: 8px 12px;
+  vertical-align: top;
+  text-align: left;
+  border: none;
+}
+
+/* Labels & Data */
+.pt-label,
+.info-label {
+  font-weight: bold;
+  color: #5c5cc6;
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+.pt-data,
+.info-data {
+  font-weight: bold;
+  color: #00008B;
+}
+
+/* Equal panels & stretch */
+.info-columns {
+  display: flex;
+  gap: 50px;
+  align-items: stretch;
+}
+
+.info-col-left,
+.info-col-right {
+  flex: 1;
+  background-color: #f0ebeb;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Product panel content */
+.info-col-left {
+  justify-content: space-between;
+}
+
+/* Customer panel: text then image */
+.info-col-right {
+  display: flex;
+  flex-direction: column;    /* stack children top → bottom */
+  align-items: center;       /* center heading & avatar */
+  gap: 20px;                 /* space between heading, avatar & table */
+  text-align: center;        /* center the text in the heading */
+}
+
+.customer-info {
+  flex: 1;
+}
+
+.customer-info h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: darkblue;
+}
+
+.profile-picture-delivery img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.custom-popup {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.custom-popup-inner {
+  background-color: #fff0f8;
+  padding: 30px 40px;
+  border: 2px solid #ea1a94;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 350px;
+}
+
+.custom-popup-inner p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color:#ea1a94;
+}
+
+#custom-popup-close {
+  background-color: #ea1a94;
+  color: #ffffff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#custom-popup-close:hover {
+  background-color: #c9147f;
+}
+
+/* Progress bar */
+.progress-wrapper-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;       
+  gap: 20px;              
+  max-width: 1000px;
+  margin: 40px auto 40px;    
+  padding: 0 20px;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-label {
+  font-size: 20px;
+  color: #888888;
+  transition: color 0.3s, font-weight 0.3s, font-size 0.3s;
+}
+
+.progress-label.active {
+  color: #ea1a94;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.progress-horizontal {
+  position: relative;
+  width: 200px;
+  height: 40px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill-horizontal {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right, #fbd4e7, #ea1a94);
+  transition: width 1.6s ease;
+}
+
+.check-icon {
+  font-size: 25px;
+  color: #aaa;
+  opacity: 0;
+  transition: opacity 0.3s, color 0.3s;
+}
+
+.check-icon.active {
+  color: #ea1a94;
+  opacity: 1;
+}

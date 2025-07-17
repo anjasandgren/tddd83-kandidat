@@ -1,0 +1,267 @@
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(202, 223, 255);
+}
+
+.container {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    margin: 0;
+    margin-top: 0px;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.nav-container {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.navbar .navbar-nav .ml-auto {
+    margin-top: 10px;
+}
+
+.navbar-image {
+    width: 100%;
+    height: 25px;
+    position: absolute;
+    bottom: 0;
+    background-image: url('../images/baljan-header-footer-line.png');
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: auto 100%;
+    left: 0%;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    text-decoration-color: #ea1a94;
+}
+
+.custom-navbar .nav-link {
+    color: black;
+}
+
+.nav-link.active {
+    text-decoration: underline;
+    text-decoration-color: #ea1a94;
+}
+
+#profile-button {
+    font-size: 2.5rem;
+    transition: font-size 0.3s ease;
+    color: #4f4f4f;
+}
+
+#profile-button:hover {
+    font-size: 2.8rem;
+}
+
+#profile-button.active {
+    font-size: 2.8rem;
+}
+
+#home-button {
+    font-size: 1 rem;
+    transition: font-size 0.3s ease;
+    color: #4f4f4f;
+}
+
+#home-button:hover {
+    font-size: 1.3rem;
+    transition: font-size 0.3s ease;
+}
+
+#home-button.active {
+    font-size: 1.3rem;
+    transition: font-size 0.3s ease;
+}
+
+.footer {
+    color: #e847a5;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    padding: 3rem;
+    position: relative;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+}
+
+.footer .footer-link.active {
+    text-decoration: underline;
+    text-decoration-color: #ea1a94; 
+ }
+
+.extra-space {
+    margin-right: 50px;
+    display: inline-block;
+}
+
+h1 {
+    font-family: 'Futura', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: #e76db4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-family: 'Futura', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    color: #e76db4;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-family: 'Futura', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #f784c7;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+h4 {
+    font-family: 'Futura', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #f975b8;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+p {
+    font-family: 'Futura', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.6;
+    margin: 0px;
+}
+
+.button-pink {
+    font-family: 'Futura', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    background-color:#f084c3;
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.button-pink:hover {
+    background-color: #db58a4;
+    color: white;
+    font-size: 17px;
+    padding: 11px 22px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button-pink.active {
+    background-color: #b91474;
+    color: white;
+    font-size: 17px;
+    padding: 11px 22px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button-white {
+    font-family: 'Futura', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #e76db4;
+    background-color: rgb(250, 250, 254);
+    border: 1px solid #e76db4;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.button-white:hover {
+    background-color: #ffb0deeb;
+    border: 0.5 solid rgb(230, 64, 133);
+    color: white;
+    font-size: 17px;
+    padding: 11px 22px;
+    cursor: pointer;
+}
+
+.button-white.active {
+    background-color: #ec71b9e3;
+    border: 0.5 solid rgb(230, 64, 133);
+    color: white;
+    font-size: 17px;
+    padding: 11px 22px;
+    cursor: pointer;
+}
+
+.button-smaller {
+    font-family: 'Futura', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #e76db4;
+    background-color: rgb(246, 245, 245);
+    border: 1px solid #e76db4;
+    padding: 3px 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.button-smaller:hover {
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #e76db4;
+    border-color: #2f2f2f;
+    padding: 4px 11px;
+    cursor: pointer;
+}
+
+.fa-star {
+    color: rgb(247, 212, 74);
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }

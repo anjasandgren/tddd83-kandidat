@@ -1,0 +1,193 @@
+<div class="container-page text-center mt-5" style="justify-content: center;">
+  <h1>ORDER</h1>
+
+  <div class="order-page-container">
+    <div class="order-container">
+      <div class="parent-navbar order-navbar">
+        <div class="btn-container" style="width: 120px; height: 50px;">
+          <button id="coffee-btn" class="button-white" data-category="coffee">COFFEE</button>
+        </div>
+        <div style="width: 152px; height: 50px;">
+          <button id="sandwich-btn" class="button-white" data-category="sandwich">SANDWICH</button>
+        </div>
+        <div style="width: 107px; height: 50px;">
+          <button id="klägg-btn" class="button-white" data-category="klägg">KLÄGG</button>
+        </div>
+        <div style="width: 107px; height: 50px;">
+          <button id="salad-btn" class="button-white" data-category="salad">SALAD</button>
+        </div>
+        <div style="width: 115px; height: 50px;">
+          <button id="drink-btn" class="button-white" data-category="drink">DRINKS</button>
+        </div>
+      </div>
+
+      <div class="product-selection fade-in">
+        <div id="coffee" class="product-container hidden">
+          <div class="product-option" data-name="Small coffee" data-price="14">
+            <sizetitle>Small coffee – 14 kr</sizetitle>
+            <div>
+              <button class="choise-button no-milk" data-id="1">No milk</button>
+
+              <select class="milk-select " id="small-some-milk" required>
+                <option class="d-none" value="" disabled selected>Some milk</option>
+                <!--Not visible option but is default selected value -->
+                <option value="some cow milk" data-id="2">Cow</option>
+                <option value="some oatly milk" data-id="3">Oatly</option>
+              </select>
+
+              <select class="milk-select more" id="small-more-milk" required>
+                <option class="d-none" value="" disabled selected>More milk</option>
+                <!--Not visible option but is default selected value -->
+                <option value="more cow milk" data-id="4">Cow</option>
+                <option value="more oatly milk" data-id="5">Oatly</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="product-option" data-name="Large coffee" data-price="17">
+            <sizetitle>Large coffee – 17 kr</sizetitle>
+            <div>
+              <button class="choise-button no-milk" data-id="6">No milk</button>
+
+              <select class="milk-select" id="large-some-milk" required>
+                <!--Not visible option but is default selected value -->
+                <option class="d-none" value="" disabled selected>Some milk</option>
+                <option value="some cow milk" data-id="7">Cow</option>
+                <option value="some oatly milk" data-id="8">Oatly</option>
+              </select>
+
+              <select class="milk-select more" id="large-more-milk" required>
+                <!--Not visible option but is default selected value -->
+                <option class="d-none" value="" disabled selected>More milk</option>
+                <option value="more cow milk" data-id="9">Cow</option>
+                <option value="more oatly milk" data-id="10">Oatly</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="sandwich" class="product-container hidden"></div>
+        <div id="klägg" class="product-container hidden"></div>
+        <div id="salad" class="product-container hidden"></div>
+        <div id="drink" class="product-container hidden"></div>
+      </div>
+    </div>
+
+    <div class="order-summary">
+      <h3>YOUR CART</h3>
+      <ul id="cart-list"></ul>
+      <div class="summary-footer">
+        <h4 style="font-size: 23px;" id="total-amount">TOTAL: 0 kr</h4>
+        <button class="pay-button">PAY</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your cart is empty modal -->
+  <div id="empty-cart-modal" class="modal hidden">
+    <div class="modal-content">
+      <p style="font-size: 20px;">Your cart is empty</p>
+      <span class="cart-icon">🛒</span>
+      <button class="close-modal">OK</button>
+    </div>
+  </div>
+
+  <!-- Insufficient Balance Modal -->
+  <div id="no-money-modal" class="modal hidden">
+    <div class="modal-content">
+      <p>You don’t have enough money.</p>
+      <button class="close-modal">Go to Balance</button>
+    </div>
+  </div>
+
+  <div id="checkout-modal" class="hidden">
+    <div class="modal-overlay"></div>
+    <div class="modal-content" style="padding: 50px;">
+      <span id="close-modal" class="close-button">&times;</span>
+      <h2>CHECK OUT</h2>
+      <div id="checkout-cart-summary"></div>
+      <!-- Hidden inputs to hold lat/lng -->
+      <input type="hidden" id="lat-input" name="lat"/>
+      <input type="hidden" id="lng-input" name="lng"/>
+      <form id="checkout-form" style="text-align: left;">
+        <label>Building:
+          <select id="house-input">
+            <option class="d-none" value="" disabled selected>CHOOSE BUILDING</option>
+            <!--Not shown in dropdown, only used to set default value-->
+            <option value="A">A building</option>
+            <option value="B">B building</option>
+            <option value="C">C building</option>
+            <option value="E">E building</option>
+            <option value="I">I building</option>
+            <option value="KÅRALLEN">Kårallen</option>
+            <option value="KEY">Key building</option>
+            <option value="SH">SH</option>
+            <option value="PHYSICS">Physics building</option>
+          </select>
+        </label>
+        <label>Room:
+          <input type="text" id="room-input" placeholder="S10">
+        </label>
+        <label>Additional location description to deliverer (optional):
+          <input type="text" id="comment-input" placeholder="Meet me outside the class room">
+        </label>
+        <label>Time limit for order:
+          <input type="text" id="time-input" placeholder="HH:MM">
+        </label>
+        <button type="submit" class="confirm-order-btn" style="margin: 20px 0px;">CONFIRM ORDER</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- You need to choose a building -->
+<div id="house-missing-modal" class="modal hidden">
+  <div class="modal-content">
+    <p>Please choose a building.</p>
+    <button class="close-modal">OK</button>
+  </div>
+</div>
+
+<!-- You need to specify a room -->
+<div id="room-missing-modal" class="modal hidden">
+  <div class="modal-content">
+    <p>Please specify a room.</p>
+    <button class="close-modal">OK</button>
+  </div>
+</div>
+
+<!-- You need to specify a time -->
+<div id="time-missing-modal" class="modal hidden">
+  <div class="modal-content">
+    <p>Please specify a time limit for your order.</p>
+    <button class="close-modal">OK</button>
+  </div>
+</div>
+
+<!-- Time has to be in the future -->
+<div id="invalid-time-modal" class="modal hidden">
+  <div class="modal-content">
+    <p>Time has to be in the future.</p>
+    <button class="close-modal">OK</button>
+  </div>
+</div>
+
+<!-- Order Confirmed Modal -->
+<div id="order-confirmed-modal" class="modal hidden">
+  <div class="modal-content">
+    <p id="order-confirmed-text"></p>
+    <button class="close-modal">OK</button>
+  </div>
+</div>
+
+<!-- Login Modal -->
+<div id="login-required-modal" class="modal hidden">
+  <div class="modal-content">
+    <p>You need to login to put an order</p>
+    <button id="modal-login">Login</button>
+    <button id="modal-close">Close</button>
+  </div>
+</div>
+
+<script src="scripts/order.js"></script>

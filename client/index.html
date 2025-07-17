@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="styles/global.css">
+        <link rel="stylesheet" href="styles/home.css">
+        <link rel="stylesheet" href="styles/order.css">
+        <link rel="stylesheet" href="styles/deliver.css">
+        <link rel="stylesheet" href="styles/myOrders.css">
+        <link rel="stylesheet" href="styles/myDeliveries.css">
+        <link rel="stylesheet" href="styles/help.css">
+        <link rel="stylesheet" href="styles/profile.css">
+        <link rel="stylesheet" href="styles/login.css">
+        <link rel="stylesheet" href="styles/terms.css">
+        <link rel="stylesheet" href="styles/about.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+
+        <title>☕ KaffeKuriren</title>
+    </head>
+    <body>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg custom-navbar" style="height: 110px !important;">
+            <ul class="navbar-nav">
+
+                <!-- Home -->
+                <div class="nav-container" style="width: 40px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-button" data-view="home" href="#">
+                            <i class="fa-solid fa-house fa-lg" id="home-icon"></i>
+                        </a>
+                    </li>
+                </div>
+
+                <!-- Order-->
+                <div class="nav-container">
+                    <li class="nav-item">
+                        <a class="nav-link" data-view="order" href="#">
+                            <h4 style="font-size: 20px;">Order</h4>
+                        </a>
+                    </li>
+                </div>
+
+                <!-- Deliver -->
+                <div class="nav-container">
+                    <li class="nav-item">
+                        <a class="nav-link" data-view="deliver" href="#">
+                            <h4 style="font-size: 20px;">Deliver</h4>
+                        </a>
+                    </li>
+                </div>
+
+                <!-- My Orders -->
+                <div class="nav-container d-none" id="my-orders-navbar">
+                    <li class="nav-item">
+                        <a class="nav-link" data-view="my-orders" href="#">
+                            <h4 style="font-size: 20px;">My Orders</h4>
+                        </a>
+                    </li>
+                </div>
+    
+                <!-- My Deliveries -->
+                <div class="nav-container d-none" id="my-deliveries-navbar">
+                    <li class="nav-item">
+                        <a class="nav-link" data-view="my-deliveries" href="#">
+                            <h4 style="font-size: 20px;">My Deliveries</h4>
+                        </a>
+                    </li>
+                </div>
+
+                <!-- Help -->
+                <div class="nav-container">
+                    <li class="nav-item">
+                        <a class="nav-link" data-view="help" href="#">
+                            <h4 style="font-size: 20px;">Help</h4>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <!-- Balance -->
+                <div class="nav-container">
+                    <li class="nav-item" class= "nav-link d-none" id="balance-item-navbar"
+                        style="display: flex; align-items: center;">
+                        <h4 class="balance-navbar d-none" style="font-size: 20px;">
+                            <span id="balance-navbar"></span>
+                        </h4>
+                    </li>
+                </div>
+
+                <!-- Profile -->
+                <div class="nav-container">
+                    <li class="nav-item">
+                        <a class="nav-link d-none" id="profile-button" data-view="profile" href="#" style="margin-bottom: 10px;">
+                            <img src="images/default.png">
+                        </a>
+                    </li>
+                </div>
+
+                <!-- Log out -->
+                <div class="nav-container" style="width: 105px;">
+                    <li class="nav-item" style="padding-top: 0px !important;"><a class="nav-link button-pink d-none" id="log-out-button-navbar" data-view="log-out" href="#">Log out</a></li>
+                </div>
+
+                <!-- Login -->
+                <div class="nav-container">
+                    <li class="nav-item" style="padding-bottom: 12px !important;"><a class="nav-link button-pink" id="login-button-navbar" data-view="login" href="#">Login</a></li>
+                </div>
+            </ul>
+            <div class="navbar-image"></div>
+        </nav>
+
+        
+        <!-- CONTAINER -->
+        <!-- Which content changes depending on the page to be shown -->
+        <div class="container"></div>
+
+        <!-- Footer -->
+        <footer class="footer mt-5 py-300">        
+            <span class="extra-space">  Address: Kårallen Linköping </span>
+            <span class="extra-space"> Contact: <a style="color: #e847a5" href="mailto:kaffekuriren@lkpg.se">kaffekuriren@lkpg.se</a></span>
+            <a class="footer-link extra-space" data-view="about-us" style="color: #e847a5;" href="#">About KaffeKuriren</a>
+            <a class="footer-link" data-view="terms-of-use" style="color: #e847a5;" href="#">Our terms of use</a>
+            <div class="navbar-image" style="top: 0;" ></div>
+        </footer>
+
+
+        <!-- Fyrverkerier :) -->
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+        <!-- JavaScript Libraries -->
+        <!-- jQuery first, then popper and lastly Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+            <!-- Flatpickr JS -->
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+        <!-- Our own JavaScript -->
+        <script src="scripts/global.js" defer></script>
+
+        <!-- jQuery (needed for Select2: dropdown menu) -->
+        <!-- needs to be before the select2 links -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Select2 CSS and JS (needed for dropdown menu) -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    </body>
+</html>

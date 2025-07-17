@@ -1,0 +1,264 @@
+.content-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start; /* Lets lef and right panel have different heights */
+    gap: 70px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.left-panel {
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    max-width: 700px;
+    flex: 1;
+    padding: 30px;
+}
+
+.right-panel {
+    max-width: 700px;
+    flex: 1;
+}
+
+#map {
+    width: 100%;
+    height: 700px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* the stars don't really stand out from the background without this */
+.fa-star {
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.75);
+}
+
+
+.building-selection {
+    display: flex;
+    justify-content: flex-start; /* Aligns to the left */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.building-dropdown {
+    width: 220px;
+    font-size: 14px;
+    padding: 6px;
+    border-radius: 30px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Style for the selected items inside the Select2 dropdown */
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    color: black;
+    font-family: 'Futura', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 15px;
+    margin: 3px;
+}
+
+
+/* Style for dropdown options (before they're selected) */
+.select2-container--default .select2-results__option {
+    padding: 8px;
+    font-size: 16px;
+}
+
+/* Hover effect for selected buildings */
+.select2-container--default .select2-selection--multiple .select2-selection__choice:hover {
+    background-color: #ffb0deeb;; /* Same as .button-white:hover */
+    color: white;
+    cursor: pointer;
+    transform: scale(1.05); /* Zoom on hover */
+}
+
+/* Change remove button color on hover */
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+    color: black;
+}
+
+/* Hide the remove button for 'All Buildings' */
+.select2-selection__choice[title="All Buildings"] .select2-selection__choice__remove {
+    display: none !important;
+}
+
+
+/* Table Styling */
+.table-wrapper {
+    background-color: white;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border: 1px solid #ddd;  /* Light grey border */
+    height: 600px;
+}
+
+.table-scroll {
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    min-height: 300px;
+    max-height: 500px;
+}
+
+.order-table {
+    width: 100%;
+    margin-top: 10px;
+    overflow: visible;
+}
+
+
+/* style for table cells */
+.order-table th,
+.order-table td {
+    border: 1px solid #ddd; /* adds grey borders to headers (th) and data cells (td) */
+    padding: 10px;
+    text-align: center;
+}
+
+.order-table thead th {
+    position: sticky;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #e6e6e6;
+    z-index: 1;
+}
+
+.order-row {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-row:hover {
+    background-color: #ffb0deeb;   /* Light pink hover effect (same color as white button hover */
+    color: white;
+}
+
+.selected-order {
+    background-color: #b91474 !important;   /* Darker pink for selected order */
+    color: white !important;
+}
+
+/* table header row styling */
+.order-table th {
+    background-color: #e6e6e6;
+    font-weight: bold;
+}
+
+/* styling for table body (the rows in the table) */
+.order-table tbody tr:nth-child(even) {
+    background-color: #c2d4f8;  /* even rows are slightly blue */
+}
+
+.order-table tbody tr:nth-child(odd) {
+    background-color: #e6efff;  /* Slightly lighter blue for odd rows */
+}
+
+.order-table tbody tr:nth-child(even):hover,
+.order-table tbody tr:nth-child(odd):hover {
+    background-color: #e76db4 !important;   /* hover color (importan = hover color also on selected orders) */
+}
+
+/* Blur background when confirmation modal is open */
+body.modal-active .content-wrapper {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+/* Modal background */
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal box */
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.modal-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#modal-yes, #modal-login {
+    background-color: #b91474;
+    color: white;
+}
+
+#modal-no, #modal-close {
+    background-color: #ccc;
+}
+
+
+/* style for tooltip = information when you hover over icons in the order */
+.custom-tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* this moves only the text from the question mark to the right */
+.tooltip-left .custom-tooltip {
+    left: auto;
+    right: 0;
+    margin-left: 0;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.custom-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    background-color: #b91474;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 10;
+    top: 80%;
+    margin-top: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: opacity 0.2s ease-in-out;
+    white-space: nowrap;
+    font-size: 14px;
+    font-family: 'Futura', sans-serif;
+    font-weight: normal;
+}
+
+.custom-tooltip-wrapper:hover .custom-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+#loading-spinner i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 50px !important;
+}

@@ -1,0 +1,265 @@
+.main-container {
+    background-color: white;
+    border-radius: 30px;
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.column {
+    background-color: rgb(240 235 235);
+    border-radius: 30px;
+    margin: 30px;
+}
+
+.contanier-for-box {
+    width: 95%;
+    height: 27%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.contanier-horisontal-content{
+    width: 95%;
+    height: 27%;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contanier-for-half-box {
+    width: 42.5%;
+    height: 95%;
+}
+
+.box {
+    background-color: white;
+    border: 0px;
+    border-radius: 10px;
+    width: 85%;
+    height: 95%;
+    transition: font-size 0.3s ease, height 0.3s ease, width 0.3s ease, border-color 0.3s ease;
+}
+
+.box-half {
+    background-color: white;
+    border: 0px;
+    border-radius: 10px;
+    width: 95%;
+    height: 95%;
+    transition: font-size 0.3s ease, height 0.3s ease, width 0.3s ease, border-color 0.3s ease;
+}
+
+.box-half:hover {
+    background-color: rgb(255, 245, 246);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.box:hover {
+    background-color: rgb(255, 245, 246);
+    width: 90%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.view {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.add-money-container {
+    margin: 0 auto;
+    border-radius: 30px;
+    background-color: #f2e9e9;
+    padding:30px;
+    height: 80%;
+    width: 60%;
+}
+
+.arrow-back-container {
+    display: flex;
+    height: 40px;
+}
+
+.fa-arrow-left {
+    font-size: 30px;
+    color: grey;
+    margin-top: 15px;
+    margin-left: 20px;
+    transition: font-size 0.3s ease;
+}
+
+.fa-arrow-left:hover {
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.fa-pen-to-square {
+    color: #555;
+    transition: font-size 0.3s ease;
+    margin: 20px;
+    float: right;
+}
+
+.fa-pen-to-square:hover {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.fa-user {
+    font-size: 80px;
+    margin: auto;
+    margin-top: 21px;
+    color: grey;
+}
+
+.user-info-text-box {
+    position: relative;
+    margin-top: 20px;
+    padding-left: 30px;
+}
+
+.user-info-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-info-row strong {
+  display: inline-block;
+  text-align: left;
+  margin-right: 13px;
+}
+
+.user-info-rating-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-info-rating-row strong {
+  display: inline-block;
+  text-align: left;
+  margin-right: 13px;
+}
+
+.user-info {
+  display: inline-block;
+  text-align: left;
+}
+
+/* Fix rating alignment */
+#user-info-rating-order strong,
+#user-info-rating-deliver strong {
+  white-space: nowrap; /* Keep "Rating (order):" on one line */
+}
+
+.edit-input {
+  width: 200px;
+  font-size: 16px;
+  color: #5a5a5a;
+  margin-left: 20px;
+  position: absolute;
+  left: 100px; /* Match the width of the labels */
+}
+
+/* Position save button next to phone field */
+#save-button {
+  position: center;
+  left: 100px; /* Match the width of the labels */
+  top: 115px;
+  margin: 0;
+}
+
+/* Remove extra margin for button container */
+.has-centered-content {
+  margin-top: 20px;
+  display: block;
+}
+
+.rank-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.table-container {
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 90%;
+    max-height: 300px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid grey;
+    padding: 5px;
+    text-align: left;
+}
+
+th {
+    background-color: #ffbaef;
+    position: sticky; top: 0;
+}
+
+.add-money-button {
+    margin-top: 40px;
+    padding: 15px 30px;
+    font-size: 30px;
+    height: 200px;
+    width: 300px;
+}
+
+.balance-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 0px 0px 30px 0px;
+}
+
+
+#currentBalance {
+  font-size: 50px;
+  font-weight: bold;
+  background: linear-gradient(
+    120deg,
+    #7a5c45,
+    #a89078,
+    #d2c1af,
+    #a89078,
+    #7a5c45
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shimmer 5s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

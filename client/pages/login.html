@@ -1,0 +1,149 @@
+<!-- Sign Up view-->
+<script id="view-sign-up" type="text/html">
+  <div class="login-box">
+    <h1 class="contact-header">Sign Up</h1>
+    <div style="display: flex; width: 100%; justify-content: center;">
+      <div class="login-form">
+        <br />
+        <label for="firstname" class="required-label">First name</label>
+        <input
+          type="text"
+          id="firstname"
+          name="firstname"
+          placeholder="Enter your firstname"
+        />
+
+        <label for="lastname" class="required-label">Last name</label>
+        <input
+          type="text"
+          id="lastname"
+          name="lastname"
+          placeholder="Enter your lastname"
+        />
+
+        <label for="email" class="required-label">Email</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+        />
+
+        <label for="phone-number" class="required-label">Phone number</label>
+        <input
+          type="text"
+          id="phone-number"
+          name="phone-number"
+          placeholder="Enter your phone number"
+        />
+
+        <label for="password" class="required-label">Password</label>
+        <div style="position: relative; width: 100%;">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Write your password here"
+          />
+          <i
+            id="toggle-password"
+            class="fas fa-eye"
+            style="position: absolute; right: 10px; top: 40%; transform: translateY(-50%); cursor: pointer;"
+          ></i>
+        </div>
+
+        <label for="program">Program</label>
+        <div class="program-selection">
+          <select id="program-select" class="program-dropdown">
+            <option value="ALL">All Programs</option>
+            <option value="Human Resources">Human Resources</option>
+            <option value="Politices Kandidat">Politices Kandidat</option>
+            <option value="Psykologprogrammet">Psykologprogrammet</option>
+            <option value="Socionom">Socionom</option>
+            <option value="Samhällsplanering">Samhällsplanering</option>
+            <option value="Datateknik">Datateknik</option>
+            <option value="Maskinteknik">Maskinteknik</option>
+            <option value="Industriell ekonomi">Industriell ekonomi</option>
+            <option value="Teknisk biologi">Teknisk biologi</option>
+            <option value="Teknisk fysik">Teknisk fysik</option>
+            <option value="Teknisk matematik">Teknisk matematik</option>
+            <option value="Tekniskt basår">Tekniskt basår</option>
+            <option value="Affärsjuridik">Affärsjuridik</option>
+            <option value="Civilekonom">Civilekonom</option>
+            <option value="Lärare">Lärare</option>
+            <option value="Other">Other</option>
+            <option value="Not studying">Not studying</option>
+          </select>
+        </div>
+
+        <div id="error-message-sign-up" style="display:none;color:red;"></div>
+
+        <div class="box-with-centered-content">
+          <button class="button-pink" id="sign-up-button">SIGN UP</button>
+        </div>
+
+        <button
+          class="button-smaller"
+          id="login-view"
+          style="margin: 20px; margin-inline: auto;"
+        >
+          Login
+        </button>
+      </div>
+    </div>
+  </div>
+</script>
+
+<!-- Login view -->
+<script id="view-login" type="text/html">
+  <div class="login-box">
+    <h1 class="contact-header">Login</h1>
+    <div style="display: flex; width: 100%; justify-content: center;">
+      <div class="login-form">
+        <br />
+        <label for="email">Email</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Write your email here"
+        />
+
+        <label for="password">Password</label>
+        <div style="position: relative; width: 100%;">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Write your password here"
+          />
+          <i
+            id="toggle-password"
+            class="fas fa-eye"
+            style="position: absolute; right: 10px; top: 40%; transform: translateY(-50%); cursor: pointer;"
+          ></i>
+        </div>
+
+        <div id="error-message-login" style="display:none;color:red;"></div>
+
+        <div class="box-with-centered-content" style="margin-top: 15px;">
+          <button class="button-pink" id="login-button">LOGIN</button>
+        </div>
+
+        <button
+          class="button-smaller"
+          id="sign-up-view"
+          style="margin: 20px; margin-inline: auto;"
+        >
+          Sign Up
+        </button>
+      </div>
+    </div>
+  </div>
+</script>
+
+<!-- Container in index.html -->
+<div class="container-page text-center mt-5"></div>
+
+<!-- JavaScript -->
+<script src="scripts/login.js"></script>

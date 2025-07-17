@@ -1,0 +1,170 @@
+<div class="container text-center">
+  <h1>My Deliveries</h1>
+
+  <div class="order-selector">
+    <label for="order-select" class="order-label">Choose an order:</label>
+    <select id="order-select" class="order-select">
+      <option disabled selected>Choose an order</option>
+      <!-- Additional options dynamically inserted -->
+    </select>
+  </div>
+
+
+  <div class="myDeliveries-info">
+    <!-- Delivery history left, Rate customer right -->
+    <div class="history-rate-container">
+      <div style="height: 50px; width: 230px; display: flex; justify-content: center;" id="delivery-history-button">
+        <button  class="button-white" aria-label="View Delivery History">Delivery history</button>
+      </div>
+      <div style="height: 50px; width: 230px; display: flex; justify-content: center;" id="rate-customer-btn">
+        <button class="button-white d-none">Rate Customer</button>
+      </div>
+    </div>
+
+    <div class="info-columns">
+      <!-- Left column: Product & Time-limit -->
+      <div class="info-col-left">
+        <table class="product-info-table">
+          <tr>
+            <td class="pt-label">Products:</td>
+            <td class="pt-data" id="product"></td>
+          </tr>
+          <tr>
+            <td class="pt-label">Time-limit:</td>
+            <td class="pt-data" id="time-limit"></td>
+          </tr>
+          <tr>
+            <td class="pt-label">Message:</td>
+            <td class="pt-data" id="comment"></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Right column: Customer info table -->
+      <div class="info-col-right">
+        <h2 style="font-size: 20px; color: #00008B">
+          Your customer
+        </h2>
+        <div class="profile-picture-delivery" id="profile-picture-delivery"> 
+          <img
+              src="images/default.png"
+              style="
+                  width: 80px;
+                  height: 80px;
+                  object-fit: cover;
+                  border-radius: 50%;
+                  border: 2px solid #ccc;
+                  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+              "
+              alt="Customer profile"
+          >
+        </div>
+
+        <table class="customer-info-table">
+          <tr>
+            <td class="info-label">Name:</td>
+            <td class="info-data" id="customer-name"></td>
+          </tr>
+          <tr>
+            <td class="info-label">Phone:</td>
+            <td class="info-data" id="customer-phone"></td>
+          </tr>
+          <tr>
+            <td class="info-label">Email:</td>
+            <td class="info-data" id="customer-email"></td>
+          </tr>
+          <tr>
+            <td class="info-label">Building:</td>
+            <td class="info-data" id="customer-building"></td>
+          </tr>
+          <tr>
+            <td class="info-label">Room:</td>
+            <td class="info-data" id="customer-room" style="display: flex; align-items: center; gap: 10px; padding-bottom: 0px;"></td>
+          <tr>
+            <td class="info-label">Rating:</td>
+            <td class="info-data" id="customer-rating"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-wrapper-horizontal">
+    <!-- Step 1 -->
+    <div class="progress-step">
+      <span class="progress-label">Pending</span>
+      <i class="fa-solid fa-check check-icon"></i>
+    </div>
+
+    <!-- Progress: Pending → Accepted -->
+    <div class="progress-horizontal">
+      <div class="progress-fill-horizontal" id="progress-fill-pending-accepted"></div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="progress-step">
+      <span class="progress-label">Accepted</span>
+      <i class="fa-solid fa-check check-icon"></i>
+    </div>
+
+    <!-- Progress: Accepted → Delivered -->
+    <div class="progress-horizontal">
+      <div class="progress-fill-horizontal" id="progress-fill-accepted-delivered"></div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="progress-step">
+      <span class="progress-label">Delivered</span>
+      <i class="fa-solid fa-check check-icon"></i>
+    </div>
+  </div>
+</div>
+
+
+<!-- Popup Modal for Rating Customer -->
+<div id="rate-customer-popup" class="custom-popup hidden">
+  <div class="custom-popup-inner">
+    <h3>Rate Customer</h3>
+    <p>How was the customer?</p>
+
+    <div class="stars" id="customer-rating-stars">
+      <span class="star" data-value="1">★</span>
+      <span class="star" data-value="2">★</span>
+      <span class="star" data-value="3">★</span>
+      <span class="star" data-value="4">★</span>
+      <span class="star" data-value="5">★</span>
+    </div>
+
+    <button id="submit-customer-rating" class="button-pink">
+      Submit Rating
+    </button>
+  </div>
+</div>
+
+<div id="custom-popup" class="custom-popup hidden">
+  <div class="custom-popup-inner">
+    <p id="custom-popup-message"></p>
+    <button id="custom-popup-close">OK</button>
+  </div>
+</div>
+
+
+
+<!-- Modal for MazeMap -->
+<!-- iframe = elemt that embed another webpage or document within this html page,
+    like putting a window on this page that shows content from another source -->
+<div id="mazemap-modal" class="custom-popup hidden">
+  <div class="custom-popup-inner" style="max-width: 800px; width: 90%; height: 600px">
+    <iframe
+      id="mazemap-iframe"
+      style="width: 100%; height: 100%; border: none; border-radius: 20px">
+    </iframe>
+    <button id="mazemap-close" class="button-white">Close Map</button>
+  </div>
+</div>
+
+
+
+<!-- JavaScript -->
+<script src="scripts/myDeliveries.js" defer></script>
+<script src="scripts/profile.js" defer></script>

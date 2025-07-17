@@ -1,0 +1,330 @@
+.myOrders-container {
+    background-color: white;
+    border-radius: 30px;
+    width: 1200px;
+    height: 500px;
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* drop down */
+
+.order-selector {
+    margin: 20px auto;
+    width: 50%;
+    text-align: left;
+}
+
+.order-label {
+    font-size: 18px;
+    color: #5c5cc6;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.myorder-select {
+    width: 60%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #f186c4;
+    font-size: 16px;
+    color: #ea1a94;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.myorder-select:focus {
+    outline: none;
+    border-color: #ea1a94;
+}
+/* dropdown end */
+
+.lightgrey-column {
+    background-color: rgb(240 235 235);
+    border-radius: 30px;
+    margin: 30px;
+    align-items: left;
+}
+
+.contanier-for-status {
+    width: 60%;
+    height: 27%;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.status-box {
+    background-color: white;
+    border: 2px solid #fbd4e7; /* Bright pink border */
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 75%;
+    height: 95%;
+    transition: font-size 0.3s ease, height 0.3s ease, width 0.3s ease, border-color 0.3s ease;
+}
+
+.status-box:hover {
+    background-color: #fbd4e7; /* Light pink background on hover */
+    width: 90%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* === Middle column: grid layout === */
+.order-info-text-box {
+  display: grid;
+  grid-template-columns: 140px 1fr;  /* label col / value col */
+  column-gap: 20px;
+  row-gap: 15px;
+  padding: 35px 50px;
+}
+
+/* kill default paragraph spacing */
+.order-info-text-box p {
+  margin: 0;
+  display: contents; /* let the <strong> and <ul>/<span> be direct grid items */
+}
+
+/* style your labels */
+.order-info-text-box p strong {
+  grid-column: 1;
+  color: #5c5cc6;
+  font-weight: bold;
+  align-self: start;
+}
+
+/* any value elements (including your <ul>) */
+.order-info-text-box .order-info,
+.order-info-text-box .order-list,
+.order-info-text-box .edit-order-input {
+  grid-column: 2;
+  color: #00008B;
+  font-weight: 600;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* make bullets look nice */
+.order-list {
+  margin: 0;
+  padding-left: 1.2em;
+  list-style: disc;
+}
+
+
+.order-info-text-box {
+    padding: 35px 50px;
+    text-align: left;
+}
+
+.order-info-row {
+    margin-bottom: 10px;
+    color: #5c5cc6;
+    font-weight: bold;
+}
+
+.order-info {
+    color: #00008B;
+    font-weight: bold;
+}
+
+
+/* progressbar */
+
+.progress-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #888;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.progress-label.active {
+    color: #ea1a94;
+}
+
+.progress-wrapper-centered-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 10px;
+    width: 100%;
+}
+
+.progress-step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 150px;
+}
+
+/* right side */
+
+.contact-info-box {
+    background-color: rgb(240 235 235);
+    border-radius: 30px;
+    padding: 25px;
+    width: 200px;
+    margin: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.info-label {
+    color: #5c5cc6; /* light blue */
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.info-value {
+    color: #00008B; /* dark blue */
+    font-weight: bold;
+}
+
+#deliverer-info-box p {
+    margin: 8px 0;
+    line-height: 1.3;
+  }
+
+#deliverer-info-box {
+    /* use flex so we can stack and center the items */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: flex-start;
+  
+    /* tighten up spacing */
+    padding: 30px 20px;
+  }
+
+  /* Stack label above value for clarity */
+#deliverer-info-box .info-label {
+    font-size: 0.9rem;
+    color: #5c5cc6;
+    margin-bottom: 2px;
+  }
+  
+  #deliverer-info-box .info-value {
+    font-size: 1rem;
+    color: #00008B;
+    font-weight: 600;
+  }
+
+/* Progress bar positioning */
+.progress-vertical-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.progress-line {
+    position: relative;
+    width: 10px;
+    height: 100px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+}
+
+.progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(to top, #ea1a94, #fbd4e7);
+    box-shadow: 0 0 6px #fbd4e7;
+    transition: height 0.1s ease;
+}
+
+/* Button */
+
+.order-received-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 380px;
+}
+
+.button-pink-outline {
+    background-color: #f186c4;
+    border: 2px solid #000;
+    color: #4a2b3f;
+    font-weight: bold;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background-color 1.3s ease;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.button-pink-outline:hover {
+    background-color: #ea1a94;
+    color: white;
+}
+
+.popup {
+    background-color: white;
+    border: 2px solid #fbd4e7;
+    border-radius: 20px;
+    padding: 30px;
+    width: 400px;
+    position: fixed;
+    right: 50px;
+    top: 150px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.stars {
+    font-size: 30px;
+    cursor: pointer;
+    margin: 15px 0;
+    color: #ccc;
+}
+
+.stars .active {
+    color: #ea1a94;
+}
+
+.stars {
+    font-size: 30px;
+    margin: 10px 0 20px;
+}
+
+.star {
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-size: 40px;
+    padding: 0 5px;
+}
+
+.star.selected {
+    color: #ea1a94;
+}

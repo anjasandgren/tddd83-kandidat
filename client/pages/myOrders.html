@@ -1,0 +1,170 @@
+<div class="container text-center mt-5">
+    <h1>My Orders</h1>
+
+    <div class="container text-center mt-3">
+        <label for="myorder-select">Choose an order:</label>
+        <select id="myorder-select" class="myorder-select">
+            <option disabled selected>Choose an order</option>
+        </select>
+        <div class="myOrders-container">
+            <!-- <button id="order-history-button" class="button-white">
+                Order History
+            </button> -->
+
+            <!-- Left side -->
+            <div class="lightgrey-column progress-wrapper-vertical-box">
+                <div class="progress-wrapper-centered-vertical">
+                    <!-- Step 1 -->
+                    <div class="progress-step">
+                        <span class="progress-label">Pending</span>
+                    </div>
+                    <div class="progress-line">
+                        <div class="progress-fill" id="progress-fill-pending-accepted"></div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="progress-step">
+                        <span class="progress-label">Accepted</span>
+                    </div>
+                    <div class="progress-line">
+                        <div class="progress-fill" id="progress-fill-accepted-delivered"></div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="progress-step">
+                        <span class="progress-label">Delivered</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Middle-->
+            <div class="lightgrey-column" style="width: 60%;">
+                <!--Edit icon -->
+                <i class="fa-solid fa-pen-to-square" id="edit-order"></i>
+
+                <!--Order information / Edit order -->
+                <div class="order-info-text-box" id="order-info-box">
+                    <p class="order-info-row">
+                        <strong>Product: </strong>
+                        <span class="order-info" id="product"></span>
+                        <span class="edit-order-input" id="product-input"></span>
+
+                    </p>
+                    <p class="order-info-row">
+                        <strong>Time limit: </strong>
+                        <span class="order-info" id="time-limit"></span>
+                        <input class="edit-order-input d-none" id="time-limit-input" type="time">
+                    </p>
+                    <p class="order-info-row">
+                        <strong>Building: </strong>
+                        <span class="order-info" id="building"></span>
+                        <select class="edit-order-input d-none" id="building-input" required>
+                            <option value="" disabled selected>CHOOSE BUILDING</option>
+                            <option value="A">A BUILDING</option>
+                            <option value="B">B BUILDING</option>
+                            <option value="C">C BUILDING</option>
+                            <option value="D">D BUILDING</option>
+                            <option value="E">E BUILDING</option>
+                            <option value="I">I BUILDING</option>
+                            <option value="KEY">KEY BUILDING</option>
+                            <option value="PHYSICS">PHYSICS BUILDING</option>
+                            <option value="KÅRALLEN">KÅRALLEN</option>
+                            <option value="SH">SH</option>
+                        </select>
+                    </p>
+                    <p class="order-info-row">
+                        <strong>Room: </strong>
+                        <span class="order-info" id="room"></span>
+                        <input class="edit-order-input d-none" id="room-input" type="text">
+                    </p>
+                    <p class="order-info-row" id="message-row">
+                        <strong>Message to deliverer: </strong>
+                        <span class="order-info" id="comment"></span>
+                        <input class="edit-order-input d-none" id="comment-input" type="text">
+                    </p>
+                    </p>
+                    <div class="has-centered-content">
+                        <button class="button-pink d-none" id="save-button" style="margin-top: 20px; margin: 0 auto;">Save</button>
+                    </div>
+
+                    <!-- Delete order -->
+                    <div class="has-centered-content">
+                        <button class="button-white d-none" id="delete-button" style="margin-top: 10px; margin: 0 auto;">Delete order</button>
+                    </div>
+                    
+                    <!-- Order Received Button -->
+                    <div class="order-received-wrapper">
+                        <button id="order-received-btn" style="width: 290px; height: auto;" class="button-pink-outline">ORDER RECEIVED</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--Right-->
+            <div class="lightgrey-column" style="width: 30%; margin-right: 10px;">
+                <div class="order-info-text-box" id="deliverer-info-box">
+                    <h2 style="margin-bottom: 20px; font-size: 20px; color: darkblue;">Your deliverer</h2>
+
+                    <!-- Profile pic RIGHT -->
+                    <div class="profile-picture-order" id="profile-picture-order"
+                        style="flex-shrink: 0; text-align: right;">
+                        <img src="images/default.png" style="
+                                width: 80px;
+                                height: 80px;
+                                object-fit: cover;
+                                border-radius: 50%;
+                                border: 2px solid #ccc;
+                                box-shadow: 0 0 5px rgba(0,0,0,0.2);
+                            ">
+                    </div>
+                    <p id="deliverer-name">
+                        <span class="info-label">Name:</span>
+                        <span class="info-value" id="deliverer-name-value"></span>
+                    </p>
+                    <p id="deliverer-phone">
+                        <span class="info-label">Phone:</span>
+                        <span class="info-value" id="deliverer-phone-value"></span>
+                    </p>
+                    <p id="deliverer-email">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value" id="deliverer-email-value"></span>
+                    </p>
+                    <p id="deliverer-rating">
+                        <span class="info-label">Rating:</span>
+                        <span class="info-value" id="deliverer-rating-value"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Popup Modal -->
+        <div id="order-received-popup" class="popup hidden">
+            <h3>Confirm Delivery</h3>
+            <p>Have you received your order?</p>
+
+            <!-- Star Rating -->
+            <div class="stars" id="rating-stars">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+            <button id="confirm-receipt-btn" class="button-pink">Confirm</button>
+        </div>
+
+        <div id="custom-popup" class="custom-popup hidden">
+            <div class="custom-popup-inner">
+                <p id="custom-popup-message">This is a message</p>
+                <button id="custom-popup-close">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- JavaScript -->
+<script src="scripts/myOrders.js" defer></script>

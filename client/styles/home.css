@@ -1,0 +1,27 @@
+.home-button {
+    width: 400px;
+    height: 80%;
+    background-size: cover; 
+    background-position: center;
+    border: 1px solid rgb(44, 44, 44);
+    border-radius: 40px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin: 0px 30px 30px 30px;
+    font-family: 'Futura', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #e854aa;;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.home-button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    text-shadow: 3px 1px 2px rgb(52, 52, 52), -1px -1px 2px rgb(52, 52, 52), 3px -1px 2px rgb(52, 52, 52), 0px 1px 2px rgb(52, 52, 52);
+}
+
+.header-image {
+    padding: 30px;
+}

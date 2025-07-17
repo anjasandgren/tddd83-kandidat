@@ -1,0 +1,12 @@
+# Python Cache
+__pycache__
+
+# Environment
+venv/
+venv~/
+
+# DB
+server/instance/app.db
+
+# macOS system files
+.DS_Store

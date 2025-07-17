@@ -1,0 +1,31 @@
+.terms-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    position: relative;
+    max-height: 500px;
+    overflow-y: auto; 
+}
+
+.custom-bullets {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-left: 0;
+}
+
+.custom-bullets li{
+    text-align: left;
+}
+
+.custom-bullets li::marker{
+    color: #e76db4;
+    font-size: 24px;
+}

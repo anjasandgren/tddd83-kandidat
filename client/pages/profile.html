@@ -1,0 +1,269 @@
+
+<div class="container-page text-center mt-5">
+    <h1>Profile</h1>
+
+    <div class="main-container"></div>
+</div>
+
+<script id="profile-view" type="text/html">
+
+
+    <!--LEFT SIDE-->
+    <div class="column" style="width: 55%">
+        <div class="contanier-for-box">
+            <button class="box" id="leaderboard-button">
+                <h3 id="leaderboard" style="font-size: 40px;"></h3>
+                <h3 style="font-size: 30px;">🏆 Leaderboard 🏆</h3>
+            </button>
+        </div>
+
+        <div class="contanier-for-box">
+            <button class="box" id="balance-button">
+                <h3 id="balance" style="font-size: 34px;">Add Money</h3>
+            </button>
+        </div>
+
+        <div class="contanier-horisontal-content">
+            <div class="contanier-for-half-box" style="margin-left: 33px; margin-right: 10px;">
+                <button class="box-half" id="order-history-button">
+                    <h3 style="font-size: 18px;">Order History</h3>
+                </button>
+            </div>
+
+            <div class="contanier-for-half-box" style="margin-right: 10px;">
+                <button class="box-half" id="delivery-history-button">
+                    <h3 style="font-size: 18px;">Delivery History</h3>
+                </button>
+            </div>
+
+            <div class="contanier-for-half-box" style="margin-right: 32px;">
+                <button class="box-half" id="payment-history-button">
+                    <h3 style="font-size: 18px;">Payment History</h3>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--RIGHT SIDE-->
+    <div class="column" style="width: 40%; margin-left: 10px;">
+
+        <!--Edit icon -->
+        <i class="fa-solid fa-pen-to-square" id="edit-profile"></i>
+
+        <!-- Profile Picture -->
+        <div class="profile-picture"  style="width: 100px; height: 100px;  margin-left: 20px; display: flex; flex-direction: row; margin-top: 20px;" id="profile-picture">
+            <img
+                src="images/default.png"
+                style="
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 2px solid #ccc;
+                box-shadow: 0 0 5px rgba(0,0,0,0.2);
+                " 
+            >
+            <input type="file" id="file-input" accept="image/*" style="display: none;" />
+            <button class="button-white" style="margin-top: 35px; text-align: center; display: none; height: 40px;" id="upload-button">Edit</button>
+        </div>
+
+        <!--User information / Edit user -->
+        <div class="user-info-text-box" id="user-info-box">
+            <p class="user-info-row">
+                <strong>Name: </strong>
+                <span class="user-info" id="name"></span>
+                <input class="edit-input d-none" id="name-input" type="text">
+            </p>
+            <p class="user-info-row">
+                <strong>Email: </strong>
+                <span class="user-info" id="email"></span>
+                <input class="edit-input d-none" id="email-input" type="text">
+            </p>
+            <p class="user-info-row">
+                <strong>Program: </strong>
+                <span class="user-info" id="program"></span>
+                <input class="edit-input d-none" id="program-input" type="text">
+            </p>
+            <p class="user-info-row">
+                <strong>Phone: </strong>
+                <span class="user-info" id="phone"></span>
+                <input class="edit-input d-none" id="phone-input" type="text">
+            </p>
+            <p class="user-info-rating-row" id="user-info-rating-order">
+                <strong>Rating (order): </strong>
+                <span class="user-info" id="rating-order"></span><i class="fa-solid fa-star d-none" id="star-order"></i>
+            </p>
+            <p class="user-info-rating-row" id="user-info-rating-deliver">
+                <strong>Rating (deliver): </strong>
+                <span class="user-info" id="rating-deliver"></span><i class="fa-solid fa-star d-none" id="star-deliver"></i>
+            </p>
+            <div class="has-centered-content">
+                <button class="button-pink d-none" id="save-button" style="margin-top: 20px; margin: 0 auto;">Save</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<!--Leaderboard View-->
+<script id="leaderboard-view" type="text/html">
+    <div style="width:100%;">
+        <div class="arrow-back-container">
+            <i class="fa-solid fa-arrow-left" id="go-back-to-profile-view"></i>
+        </div>
+        <div class="view">
+            <h2 style="margin:0 auto">🏆 Leaderboard 🏆</h2>
+            <div class="rank-container">
+                <div class="rank-delivery-container" style="width:50%; margin-top: 40px;">
+                    <h3 style="margin: 20px auto; font-size: 20px;">Our best KaffeKurirer!</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ranking</th>
+                                <th>Name</th>
+                                <th>Number of Deliveries</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rank-delivery-body">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="rank-ordering-container" style="width:50%; margin-top: 40px;">
+                    <h3 style="margin: 20px auto; font-size: 20px;">Our best coffee drinkers!</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ranking</th>
+                                <th>Name</th>
+                                <th>Number of Orders</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rank-ordering-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</script>
+
+
+<!--Balance View-->
+<script id="balance-view" type="text/html">
+    <div style="width:100%;">
+      <div class="arrow-back-container">
+        <i class="fa-solid fa-arrow-left" id="go-back-to-profile-view"></i>
+      </div>
+    <div class="view">
+        <p style="font-size: 14px; color: gray;">Current Balance:</p>
+        <div class="balance-container">
+            <p id="currentBalance"></p>
+        </div>
+
+        <div class="add-money-container">
+            <h3 style="margin:0px 0px 20px 0px;">Add Money</h3>
+            <input type="number" id="amount" placeholder="Enter amount" style="padding: 10px; font-size: 18px; width: 200px; text-align: center;">
+            <br>
+            <p style="margin-top: 10px; font-size: 14px; color: gray;">
+                Minimum 3 SEK
+            </p>
+            <button class="button-pink" id="add-money-button" style="margin-top:20px;">Add</button>
+        </div>
+    </div>
+</script>
+
+
+<!--Order History View-->
+<script id="order-history-view" type="text/html">
+    <div style="width:100%;">
+        <div class="arrow-back-container">
+            <i class="fa-solid fa-arrow-left" id="go-back-to-profile-view"></i>
+        </div>
+
+        <div class="view">
+            <h2 style="margin:0 auto">Order History</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Ordered</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<!-- Payment history -->
+<script id="payment-history-view" type="text/html">
+    <div style="width:100%;">
+        <div class="arrow-back-container">
+            <i class="fa-solid fa-arrow-left" id="go-back-to-profile-view"></i>
+        </div>
+
+        <div class="view">
+            <h2 style="margin:0 auto">Payment History</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paymentTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<!--Deliver History View-->
+<script id="delivery-history-view" type="text/html">
+    <div style="width:100%;">
+        <div class="arrow-back-container">
+            <i class="fa-solid fa-arrow-left" id="go-back-to-profile-view"></i>
+        </div>
+
+        <div class="view">
+            <h2 style="margin:0 auto">Delivery History</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Delivered</th>
+                            <th>Building</th>
+                            <th>Room</th>
+                            <th>Reward</th>
+                        </tr>
+                    </thead>
+                    <tbody id="deliveryTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<!-- Stripe -->
+<script src="https://js.stripe.com/v3/"></script>
+<!-- JavaScript -->
+<script src="scripts/profile.js"></script>
